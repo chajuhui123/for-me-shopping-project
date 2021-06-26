@@ -1,4 +1,4 @@
-# forMeProject
+# For Me Shopping Project
 2021-07 멋사 중앙 아이디어톤 
 
 ## 역할 분담
