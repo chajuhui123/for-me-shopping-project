@@ -4,7 +4,7 @@ from django.db import models
 
 class Item(models.Model):
     name = models.CharField(max_length=100)
-    shop_name = models.CharField(max_length=200)
+    shop_name = models.CharField(max_length=100)
     category = models.CharField(max_length=100)
 
 class Measure(models.Model):
