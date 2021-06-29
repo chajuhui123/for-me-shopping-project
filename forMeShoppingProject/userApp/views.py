@@ -13,13 +13,11 @@ def signup_view(request):
             return redirect("main")
         else:
             return redirect("main")
-            
+
     else: # GET 방식일 때
         form = RegisterForm()
-        context = {
-            'form' : form
-        }
-    return render(request, 'signup.html', context)
+
+    return render(request, 'signup.html', {'form' : form})
 
 # 로그인 함수
 def login_view(request):
