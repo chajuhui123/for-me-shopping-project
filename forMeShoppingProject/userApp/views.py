@@ -5,7 +5,7 @@ from .forms import RegisterForm
 
 # 회원가입 함수
 def signup_view(request):
-    if request.method == "POST": #  POST 방식일 때
+    if request.method == "POST": # POST 방식일 때
         form = RegisterForm(request.POST)
         if form.is_valid():
             user = form.save()
