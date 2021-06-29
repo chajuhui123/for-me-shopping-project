@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'userApp.CustomUser' # 프로젝트에서 사용하는 유저 모델
 
 # Application definition
 
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mainApp', # mainApp 설치
+    'userApp', # userApp 설치
 ]
 
 MIDDLEWARE = [
