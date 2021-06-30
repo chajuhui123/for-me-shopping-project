@@ -18,4 +18,9 @@ class RegisterForm(UserCreationForm):
                 'style': 'width: 150px; height: 50px;',
                 'placeholder': '비밀번호 입력',
             }),
+            'password2': PasswordInput(attrs={
+                'class': 'form-control',
+                'style': 'width: 150px; height: 50px;',
+                'placeholder': '비밀번호 확인',
+            }),
         }

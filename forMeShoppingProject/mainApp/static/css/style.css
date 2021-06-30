@@ -44,3 +44,27 @@ a:hover{
     height: 300px;
 }
 
+<<<<<<< HEAD
+=======
+.navbar{
+    display: flex;
+    flex-direction: row;
+    background-color: #617496;
+}
+
+.logo{
+    display: flex;
+}
+
+.navbarbutton{
+    float: right;
+}
+
+.footer{
+    display: flex;
+    background-color: #617496;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+>>>>>>> 57ba81c83eb49ec6f0f8d53ec308cee0b7a983a0
