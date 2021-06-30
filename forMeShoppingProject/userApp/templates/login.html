@@ -1,10 +1,11 @@
 {% extends 'base.html' %} <!-- base.html 템플릿을 상속받아 사용 -->
     {% block content %}
-
-    <form action = "{% url 'login' %}" method = "POST">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type = "submit">로그인</button>
-    </form>    
-
+    <div class="wrapper" style="text-align: center">
+        <h2 class="sub-title">로그인</h2><br>
+        <form action = "{% url 'login' %}" method = "POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type = "submit">로그인</button>
+        </form>    
+    </div>
     {% endblock %}
