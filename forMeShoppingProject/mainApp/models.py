@@ -6,9 +6,15 @@ class Item(models.Model):
     name = models.CharField(max_length=100)
     shop_name = models.CharField(max_length=100)
     category = models.CharField(max_length=100)
+<<<<<<< HEAD
     price = models.IntegerField(null=True)
     image = models.ImageField(upload_to='images/',default="")
     shop_url = models.URLField(null=True)
+=======
+    price = models.IntegerField()
+    image = models.ImageField()
+    shop_url = models.URLField()
+>>>>>>> origin/navBarFooterBranch
 
 class Measure(models.Model):
     objects = models.Manager()

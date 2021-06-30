@@ -32,6 +32,7 @@ a:hover{
     text-decoration: none;
 }
 
+<<<<<<< HEAD
 .item-div{
     background-color: #e8ebf048;
     color : black;
@@ -45,6 +46,8 @@ a:hover{
 }
 
 <<<<<<< HEAD
+=======
+>>>>>>> origin/navBarFooterBranch
 .navbar{
     display: flex;
     flex-direction: row;
@@ -66,5 +69,8 @@ a:hover{
     align-items: center;
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> origin/newSignup
+=======
+>>>>>>> origin/navBarFooterBranch
