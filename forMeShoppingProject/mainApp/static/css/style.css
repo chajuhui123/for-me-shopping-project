@@ -27,7 +27,7 @@ a {
     text-decoration: none;
 }
 
-a :hover{
-    color : #617496;
+a:hover{
+    color : #617496 ; 
     text-decoration: none;
 }
