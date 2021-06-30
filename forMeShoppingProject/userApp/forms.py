@@ -23,4 +23,9 @@ class RegisterForm(UserCreationForm):
                 'style': 'width: 150px; height: 50px;',
                 'placeholder': '비밀번호 확인',
             }),
+            'length': TextInput(attrs={
+                'class': 'form-control',
+                'style': 'width: 150px; height: 50px;',
+                'placeholder': '총장 입력',
+            }),
         }
