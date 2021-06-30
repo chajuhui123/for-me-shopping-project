@@ -1,0 +1,33 @@
+.represent-color{
+    background-color: white;
+    color : #7388B0;
+    border-style: none;
+}
+
+.represent-color:hover{
+    background-color: white;
+    color : #617496;
+    border-style: none;
+}
+
+.represent-color-btn{
+    background-color: #7388B0;
+    color : white;
+    border-style: none;
+}
+
+.represent-color-btn:hover{
+    background-color: #617496;
+    color : white;
+    border-style: none;
+}
+
+a {
+    color : #7388B0;
+    text-decoration: none;
+}
+
+a :hover{
+    color : #617496;
+    text-decoration: none;
+}
