@@ -6,7 +6,7 @@
     <div class = "row">
 
         <!-- 상품 카테고리  -->
-        <div class = "col-md-2 px-0">
+        <div class = "col-md-2 mx-0 px-0">
 
             <div class="accordion" id="accordionExample">
                 <!-- 아코디언 상의 메뉴 -->
@@ -137,7 +137,7 @@
         </div>
 
         <!-- 내 정보 -->
-        <div class = "col-md-2 px-0">
+        <div class = "col-md-2 px-0 mx-0">
             <div class="card">
                 <div class="card-header represent-color">
                     나의 신체 스펙
@@ -145,10 +145,8 @@
                 <div class="card-body">
                     <!-- 로그인했을 때는 사용자의 신체 스펙 가져옴 -->
                     {% if user.is_authenticated %} <!-- 로그인된 상태인지 체크 -->
-                        <p>키 (cm) : </p>
-                        <!-- {{user.height}} -->
-                        <p>몸무게 (kg) :</p>
-                        <!-- {{user.weight}} -->
+                        <p>키 : {{user.height}} cm </p>
+                        <p>몸무게 : {{user.weight}} kg</p>
                     <!-- 로그인하지 않았을 때는, 로그인 후 이용 -->
                     {% else %} 
                         <p>로그인 후 이용가능한 기능입니다.</p>
@@ -163,17 +161,17 @@
                 <div class="card-body">
                     <label for="inputPassword5" class="form-label"><h6>키 (cm)</h6></label>
                     <input type="number" id="inputPassword5" class="form-control" aria-describedby=""><br/>
-                    <label for="inputPassword5" class="form-label"><h6>어깨</h6></label>
+                    <label for="inputPassword5" class="form-label"><h6>어깨 (cm)</h6></label>
                     <input type="number" id="inputPassword5" class="form-control" aria-describedby=""><br/>
-                    <label for="inputPassword5" class="form-label">가슴</label>
+                    <label for="inputPassword5" class="form-label">가슴 (cm)</label>
                     <input type="number" id="inputPassword5" class="form-control" aria-describedby=""><br/>
-                    <label for="inputPassword5" class="form-label">소매</label>
+                    <label for="inputPassword5" class="form-label">소매 (cm)</label>
                     <input type="number" id="inputPassword5" class="form-control" aria-describedby=""><br/>
-                    <label for="inputPassword5" class="form-label">허리</label>
+                    <label for="inputPassword5" class="form-label">허리 (cm)</label>
                     <input type="number" id="inputPassword5" class="form-control" aria-describedby=""><br/>
-                    <label for="inputPassword5" class="form-label">밑위</label>
+                    <label for="inputPassword5" class="form-label">밑위 (cm)</label>
                     <input type="number" id="inputPassword5" class="form-control" aria-describedby=""><br/>
-                    <label for="inputPassword5" class="form-label">밑단</label>
+                    <label for="inputPassword5" class="form-label">밑단 (cm)</label>
                     <input type="number" id="inputPassword5" class="form-control" aria-describedby=""><br/>
 
 
@@ -188,29 +186,44 @@
         </div>
 
         <!-- 쇼핑몰 정렬 및 쇼핑몰 띄우는 구역 -->
-        <div class = "col-md-8 px-5 py-3">
+        <div class = "col-md-8 py-3">
+          <div class = "container">
             <!-- 나의 인생 아이템 수치와 비슷한 상품 정렬 -->
-            <h2 class = "py-3">상품 기준 정렬 👕👚</h2>
-    
+            <h2 class = "py-3 represent-color">상품 기준 정렬 👕👚</h2>
+            <!-- 상품 카드 -->
             <div class = "row text-center">
-              {% for i in posts %} <!-- 12개씩 보내지는 posts 로 바꿔줌 -->
+              {% for i in itemPosts %} <!-- 12개씩 보내지는 posts 로 바꿔줌 -->
                   <div class = "col-3 mx-4 my-4 item-div">
                     <div style = "height: 60%;">
                       <!-- 이미지 첨부 -->
                     </div>
                     <div style = "height: 40%;">
                       <p>{{i.id}}</p>
-                      <h5>{{i.name}}</h5> <!--아이템 이름-->
-                      <h6>{{i.shop_name}}</h6> <!-- 쇼핑몰 이름 -->
-                      <!-- 상품 가격 -->
+                      <h5>{{i.name}}</h5>
+                      <h6>{{i.price}} 원</h6>
+                      <a href = "{{i.shop_url}}">{{i.shop_name}}</a> <!-- 쇼핑몰 이름 -->
                     </div>
                   </div>
               {% endfor %}
             </div>
             <hr>
-            <h2 class = "py-3">모델 기준 정렬 🚶‍♀️🚶</h2>
+            <h2 class = "py-3 represent-color">모델 기준 정렬 🚶‍♀️🚶</h2>
+            <!-- 상품 카드 -->
+            <div class = "row text-center">
+              {% for i in storePosts %} <!-- 12개씩 보내지는 posts 로 바꿔줌 -->
+                  <div class = "col-3 mx-4 my-4 item-div">
+                    <div style = "height: 60%;">
+                      <!-- 이미지 첨부 -->
+                    </div>
+                    <div style = "height: 40%;">
+                      <a href="{{i.url}}">{{i.Name}}</a> <!-- 쇼핑몰 이름 -->
+                      <!-- 상품 가격 -->
+                    </div>
+                  </div>
+              {% endfor %}
+            </div>
             
-
+          </div>
         </div> <!-- 쇼핑몰 정렬 및 쇼핑몰 띄우는 구역 끝 -->
     </div>
 
