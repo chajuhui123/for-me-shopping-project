@@ -44,6 +44,7 @@ a:hover{
     height: 300px;
 }
 
+<<<<<<< HEAD
 .navbar{
     display: flex;
     flex-direction: row;
@@ -65,3 +66,5 @@ a:hover{
     align-items: center;
 }
 
+=======
+>>>>>>> origin/newSignup
