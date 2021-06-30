@@ -27,7 +27,20 @@ a {
     text-decoration: none;
 }
 
-a :hover{
-    color : #617496;
+a:hover{
+    color : #617496; 
     text-decoration: none;
 }
+
+.item-div{
+    background-color: #e8ebf048;
+    color : black;
+    height: 300px;
+}
+
+.item-div:hover{
+    background-color: #e8ebf0a2;
+    color : black;
+    height: 300px;
+}
+
