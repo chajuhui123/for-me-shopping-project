@@ -1,14 +1,17 @@
+
 {% extends 'base.html' %} <!-- base.html 템플릿을 상속받아 사용 -->
     {% block content %}
     <!-- main.html 의 콘텐츠 시작 -->
     
-    <div class = "row" >
+    <div class = "row">
+
         <!-- 상품 카테고리  -->
         <div class = "col-md-2 px-0">
+
             <div class="accordion" id="accordionExample">
                 <!-- 아코디언 상의 메뉴 -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingOne">
+                <div class="accordion-item ">
+                  <h2 class="accordion-header" id="headingOne" >
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         상의
                     </button>
@@ -185,17 +188,30 @@
         </div>
 
         <!-- 쇼핑몰 정렬 및 쇼핑몰 띄우는 구역 -->
-        <div class = "col-md-8" >
-            <ul class="nav">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">모델 순 정렬</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">나에게 맞는 상품 정렬</a>
-                </li>
-            </ul>
+        <div class = "col-md-8 px-5 py-3">
+            <!-- 나의 인생 아이템 수치와 비슷한 상품 정렬 -->
+            <h2 class = "py-3">상품 기준 정렬 👕👚</h2>
+    
+            <div class = "row text-center">
+              {% for i in posts %} <!-- 12개씩 보내지는 posts 로 바꿔줌 -->
+                  <div class = "col-3 mx-4 my-4 item-div">
+                    <div style = "height: 60%;">
+                      <!-- 이미지 첨부 -->
+                    </div>
+                    <div style = "height: 40%;">
+                      <p>{{i.id}}</p>
+                      <h5>{{i.name}}</h5> <!--아이템 이름-->
+                      <h6>{{i.shop_name}}</h6> <!-- 쇼핑몰 이름 -->
+                      <!-- 상품 가격 -->
+                    </div>
+                  </div>
+              {% endfor %}
+            </div>
+            <hr>
+            <h2 class = "py-3">모델 기준 정렬 🚶‍♀️🚶</h2>
             
-        </div>
+
+        </div> <!-- 쇼핑몰 정렬 및 쇼핑몰 띄우는 구역 끝 -->
     </div>
 
     <!-- main.html 의 콘텐츠 끝 -->
