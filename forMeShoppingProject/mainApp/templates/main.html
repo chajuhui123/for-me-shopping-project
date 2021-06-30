@@ -1,14 +1,17 @@
+
 {% extends 'base.html' %} <!-- base.html 템플릿을 상속받아 사용 -->
     {% block content %}
     <!-- main.html 의 콘텐츠 시작 -->
     
-    <div class = "row" >
+    <div class = "row">
+
         <!-- 상품 카테고리  -->
         <div class = "col-md-2 px-0">
+
             <div class="accordion" id="accordionExample">
                 <!-- 아코디언 상의 메뉴 -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingOne">
+                <div class="accordion-item ">
+                  <h2 class="accordion-header" id="headingOne" >
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         상의
                     </button>
@@ -43,14 +46,14 @@
                         <div class = "row">
                             <div class = "col">
                                 <a href=""><strong>전체</strong></a> <br>
-                                <a href="">반팔류</a> <br>
-                                <a href="">긴팔류</a> <br>
-                                <a href="">민소매류</a>
+                                <a href="">집업류</a> <br>
+                                <a href="">코트류</a> <br>
+                                <a href="">자켓류</a>
                             </div>
                             <div class = "col">
-                                <a href="">후드류</a> <br>
-                                <a href="">셔츠류</a> <br>
-                                <a href="">스웨터류</a>
+                                <a href="">가디건류</a> <br>
+                                <a href="">패딩류</a> <br>
+                                <a href="">기타</a>
                             </div>
                       </div>
                     </div>
@@ -140,7 +143,16 @@
                     나의 신체 스펙
                 </div>
                 <div class="card-body">
-                    <!-- 로그인하지 않았을 때는 -->
+                    <!-- 로그인했을 때는 사용자의 신체 스펙 가져옴 -->
+                    {% if user.is_authenticated %} <!-- 로그인된 상태인지 체크 -->
+                        <p>키 (cm) : </p>
+                        <!-- {{user.height}} -->
+                        <p>몸무게 (kg) :</p>
+                        <!-- {{user.weight}} -->
+                    <!-- 로그인하지 않았을 때는, 로그인 후 이용 -->
+                    {% else %} 
+                        <p>로그인 후 이용가능한 기능입니다.</p>
+                    {% endif %}
                     <!-- 로그인했을 때는 회원 정보가 뜬다 -->
                 </div>
             </div>
@@ -176,17 +188,30 @@
         </div>
 
         <!-- 쇼핑몰 정렬 및 쇼핑몰 띄우는 구역 -->
-        <div class = "col-md-8" >
-            <ul class="nav">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">모델 순 정렬</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">나에게 맞는 상품 정렬</a>
-                </li>
-            </ul>
+        <div class = "col-md-8 px-5 py-3">
+            <!-- 나의 인생 아이템 수치와 비슷한 상품 정렬 -->
+            <h2 class = "py-3">상품 기준 정렬 👕👚</h2>
+    
+            <div class = "row text-center">
+              {% for i in posts %} <!-- 12개씩 보내지는 posts 로 바꿔줌 -->
+                  <div class = "col-3 mx-4 my-4 item-div">
+                    <div style = "height: 60%;">
+                      <!-- 이미지 첨부 -->
+                    </div>
+                    <div style = "height: 40%;">
+                      <p>{{i.id}}</p>
+                      <h5>{{i.name}}</h5> <!--아이템 이름-->
+                      <h6>{{i.shop_name}}</h6> <!-- 쇼핑몰 이름 -->
+                      <!-- 상품 가격 -->
+                    </div>
+                  </div>
+              {% endfor %}
+            </div>
+            <hr>
+            <h2 class = "py-3">모델 기준 정렬 🚶‍♀️🚶</h2>
             
-        </div>
+
+        </div> <!-- 쇼핑몰 정렬 및 쇼핑몰 띄우는 구역 끝 -->
     </div>
 
     <!-- main.html 의 콘텐츠 끝 -->
