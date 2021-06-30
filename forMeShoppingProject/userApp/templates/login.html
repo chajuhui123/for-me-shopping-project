@@ -1,7 +1,7 @@
 {% extends 'base.html' %} <!-- base.html 템플릿을 상속받아 사용 -->
     {% block content %}
     <div class="wrapper" style="text-align: center">
-        <h2 class="sub-title">로그인</h2><br>
+        <h2 class="sub-title">🙇‍로그인🙇</h2><br>
         <form action = "{% url 'login' %}" method = "POST">
             {% csrf_token %}
             {{form.as_p}}
