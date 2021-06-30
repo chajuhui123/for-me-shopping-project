@@ -45,9 +45,7 @@ a:hover{
     height: 300px;
 }
 
-<<<<<<< HEAD
-=======
->>>>>>> origin/navBarFooterBranch
+
 .navbar{
     display: flex;
     flex-direction: row;
@@ -68,9 +66,3 @@ a:hover{
     flex-shrink: 0;
     align-items: center;
 }
-
-<<<<<<< HEAD
-=======
->>>>>>> origin/newSignup
-=======
->>>>>>> origin/navBarFooterBranch
