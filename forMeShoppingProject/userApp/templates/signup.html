@@ -5,20 +5,20 @@
         <form action = "{% url 'signup' %}" method = "POST">
             {% csrf_token %}
             <h5>아이디<br></h5>
-            <div class="form-group">{{ form.username }}</div>
+            <div class="form-group"> Username: {{ form.username }}</div>
             <br><br>
 
             <h5>비밀번호<br></h5>
-            <div class="form-group">{{ form.password1 }}</div>
+            <div class="form-group">Password: {{ form.password1 }}</div>
             <br>
-            <div class="form-group">{{ form.password2 }}</div>
+            <div class="form-group">Confirm: {{ form.password2 }}</div>
             <br><br>
             
-            <h5>신체 사이즈<br></h5>
+            <h5>📏신체 사이즈📏<br></h5>
             <div class="form-group">{{ form.height }} cm <br><br></div>
             <div class="form-group">{{ form.weight }} kg <br><br></div>
             
-            <br><button type = "submit">회원가입</button>
+            <br><button type = "submit" class="btn btn-outline-secondary">회원가입</button>
         </form>    
     </div>
     {% endblock %}
