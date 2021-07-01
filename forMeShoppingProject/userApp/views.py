@@ -10,14 +10,10 @@ def signup_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect("main")
-        else:
-            return redirect("main")
-
+        return redirect("main")
     else: # GET 방식일 때
         form = RegisterForm()
-
-    return render(request, 'signup.html', {'form' : form})
+        return render(request, 'signup.html', {'form' : form})
 
 # 로그인 함수
 def login_view(request):
@@ -32,10 +28,7 @@ def login_view(request):
             return redirect('main')
     else :
         form = AuthenticationForm()
-        context = {
-            'form' : form
-        }
-        return render(request, "login.html", context)
+        return render(request, "login.html", {'form' : form})
 
 # 로그아웃
 def logout_view(request):
