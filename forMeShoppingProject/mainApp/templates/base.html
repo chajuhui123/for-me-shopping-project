@@ -18,12 +18,17 @@
             <h1>서비스명</h1>
         </div>
         {% if user.is_authenticated %}
+            <div>
+                <button type="button" class="represent-color-btn" class="navbarbutton">로그아웃</a>
+            </div>
+        {% else %}
+        <div>
+            <button type="button" class="represent-color-btn" class="navbarbutton">로그인</button>
+            <button type="button" class="represent-color-btn" class="navbarbutton">회원가입</button>
+        </div>
         <h1>{{user.username}}</h1>
         {% endif %}
-        <div>
-        <button type="button" class="represent-color-btn" class="navbarbutton">로그인</button>
-        <button type="button" class="represent-color-btn" class="navbarbutton">회원가입</button>
-        </div>
+        
     </nav>
 
     {% block content %}
