@@ -44,23 +44,17 @@ a:hover{
     height: 300px;
 }
 
-/* 아코디언 */
 
-*{  margin: 0; padding: 0; }
-ul{list-style: none;}
-.accordion-box{
-  width: 100%; max-width: 600px;
-  margin:  0 auto;
+.navbar{
+    display: flex;
+    flex-direction: row;
+    background-color: #617496;
 }
-p.title{
-  width: 100%;  
-  line-height: 60px; 
-  background: #000; 
-  color: #fff; 
-  box-sizing: border-box;
-  padding: 0 10px;
+
+.logo{
+    display: flex;
 }
-.con{
-  padding: 20px; 
-  display:none;
+
+.navbarbutton{
+    float: right;
 }
