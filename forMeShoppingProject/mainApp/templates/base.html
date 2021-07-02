@@ -11,44 +11,32 @@
     <link rel="text/javascript" href="{% static 'js/main.js' %}" />
 </head>
 <body>
-
-    {% if user.is_authenticated %}
-        <h1>{{user.username}}</h1>
-    {% endif %}
-<!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK3Wop5briuEkc6sHGTKBAaQSmcnhnDdyedQ&usqp=CAU" width="100" height="100" class="d-inline-block align-text-top">
-            <h1>서비스명</h1>
-        </div>
-        <div>
-        <button type="button" class="represent-color-btn" class="navbarbutton">로그인</button>
-        <button type="button" class="represent-color-btn" class="navbarbutton">회원가입</button>
-        </div>
-      </nav>
-
     <!-- Navbar -->
-    <nav class="navbar">
+    <nav class="navbar mb-1">
         <div class="logo">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK3Wop5briuEkc6sHGTKBAaQSmcnhnDdyedQ&usqp=CAU" width="100" height="100" class="d-inline-block align-text-top">
             <h1>서비스명</h1>
         </div>
+        {% if user.is_authenticated %}
+        <h1>{{user.username}}</h1>
+        {% endif %}
         <div>
         <button type="button" class="represent-color-btn" class="navbarbutton">로그인</button>
         <button type="button" class="represent-color-btn" class="navbarbutton">회원가입</button>
         </div>
-      </nav>
+    </nav>
 
-{% block content %}
+    {% block content %}
 
-<!-- 각 html의 콘텐츠가 들어가는 부분 -->
+    <!-- 각 html의 콘텐츠가 들어가는 부분 -->
 
-{% endblock %}
+    {% endblock %}
 
-<!-- footer -->
-<footer class="footer">
-    <h5>Created by:주희,연수,진수</h5>
-</footer>
+    <!-- footer -->
+    <footer class="footer mt-3" style = "height:100px; background-color: rgb(213, 220, 223);">
+        <p class = "font-weight-light" style="color: white; font-style: 10px;">Copyright © 2021 yeonsu-juhee-jinsu. All rights reserved. </p>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
