@@ -177,12 +177,12 @@
 
                     
                     <div class = "text-center">
-                        <a href="#" class="btn btn-primary my-1 represent-color-btn" style="width:90%">입력 값 저장</a>
+                        <a href="#" class="btn my-1 represent-color-btn" style="width:90%">입력 값 저장</a>
                         
 
                         <!-- 구매 상품으로 입력하기 모달 -->
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary represent-color-btn" style="width:90%" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn represent-color-btn" style="width:90%" data-bs-toggle="modal" data-bs-target="#exampleModal">
                           구매 상품으로 입력하기
                         </button>
                         <!-- Modal -->
@@ -198,7 +198,6 @@
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
                               </div>
                             </div>
                           </div>
@@ -214,7 +213,7 @@
         <div class = "col-md-8 py-3">
           <div class = "container">
             <!-- 나의 인생 아이템 수치와 비슷한 상품 정렬 -->
-            <h2 class = "py-3 represent-color">상품 기준 정렬 👕👚</h2>
+            <h2 class = "py-3 represent-color">수치 기준 상품 정렬 👕👚</h2>
             <!-- 상품 카드 -->
             <div class = "row text-center">
               {% for i in itemPosts %} <!-- 12개씩 보내지는 posts 로 바꿔줌 -->
@@ -223,26 +222,52 @@
                       <div style = "height: 60%;">
                         <img src = "{{i.image.url}}" class = "my-2" height="150px;">
                       </div>
-                      <div style = "height: 40%;">
+                      <div class = "mb-4" style = "height: 30%;">
                         <h6>{{i.name}}</h6>
                         <h6>{{i.price}} 원</h6>
-                        <a href = "{{i.shop_url}}">{{i.shop_name}}</a> <!-- 쇼핑몰 이름 -->
+                        <a href = "{{i.shop_url}}">{{i.shop_name}}</a><br> <!-- 쇼핑몰 이름 -->
+                      </div>
+                      <div style = "height: 10%;">
+                        <!-- 3D 아바타 기능 -->
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn circle represent-color-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                          3D
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">착용 모습</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                <img src = "https://fimg4.pann.com/new/download.jsp?FileID=47840897" style = "height: 500px;">
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
               {% endfor %}
             </div>
             <hr>
-            <h2 class = "py-3 represent-color">모델 기준 정렬 🚶‍♀️🚶</h2>
+            <h2 class = "py-3 represent-color">모델 기준 쇼핑몰 정렬 🚶‍♀️🚶</h2>
             <!-- 쇼핑몰 카드 -->
             <div class = "row text-center">
               {% for i in storePosts %} <!-- 12개씩 보내지는 posts 로 바꿔줌 -->
                   <div class = "col-3 mx-4 my-4 item-div">
-                    <div class = "py-1">
-                      <div style = "height: 50%;">
-                        <a href="{{i.url}}"><h5>{{i.Name}}</h5></a> <!-- 쇼핑몰 이름 -->
-                      </div>
-                  </div>
+                    <div class = "mt-5">
+                      <a  href="{{i.url}}"><h5>{{i.Name}}</h5></a> <!-- 쇼핑몰 이름 -->
+                      <br/><br/><br/>
+                      <h6>모델 스펙</h6>
+                      <h6>- cm</h6>
+                      <h6>- kg</h6>
+                    </div>
                   </div>
               {% endfor %}
             </div>
