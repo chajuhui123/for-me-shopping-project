@@ -5,36 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>마핏</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link rel="text/javascript" href="{% static 'js/main.js' %}" />
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar mb-1">
-        <div class="logo">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK3Wop5briuEkc6sHGTKBAaQSmcnhnDdyedQ&usqp=CAU" width="100" height="100" class="d-inline-block align-text-top">
-            <h1>마핏</h1>
+    <!-- 네브바 -->
+    <nav class="navbar navbar-light represent-color-navbar mb-2">
+        <div class="container-fluid">
+          <a class="navbar-brand" style="color: white;">마핏 MYFIT</a>
+          <div class="d-flex">
+            {% if user.is_authenticated %}
+                <a href="#" class="btn mx-1 px-3 navbar-btn">마이페이지</a>
+                <a href="{% url 'logout' %}" class="btn mx-1 px-3 navbar-btn">로그아웃</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="btn mx-1 px-3 navbar-btn">로그인</a>
+                <a href="{% url 'signup' %}" class="btn mx-1 px-3 navbar-btn">회원가입</a>
+            {% endif %}
+          </div>
         </div>
-        {% if user.is_authenticated %}
-            <div>
-                <button type="button" class="represent-color-btn" class="navbarbutton">로그아웃</a>
-            </div>
-        {% else %}
-        <div>
-            <form>
-                <p>
-                  <input type="text" class="form-text">
-                  <input type="button" class="img-button">
-                </p>
-              </form>
-            <button type="button" class="represent-color-btn" class="navbarbutton" onclick = "location.href = 'login_page' ">로그인</button>
-            <button type="button" class="represent-color-btn" class="navbarbutton" onclick = "location.href = 'signup_page' ">회원가입</button>
-        </div>
-        <h1>{{user.username}}</h1>
-        {% endif %}
-        
     </nav>
 
     {% block content %}
@@ -44,8 +34,8 @@
     {% endblock %}
 
     <!-- footer -->
-    <footer class="footer mt-3" style = "height:100px; background-color: rgb(213, 220, 223);">
-        <p class = "font-weight-light" style="color: white; font-style: 10px;">Copyright © 2021 yeonsu-juhee-jinsu. All rights reserved. </p>
+    <footer class="footer mt-3" style = "height:120px; background-color: rgb(213, 220, 223);">
+        <p class = "font-weight-light text-center pt-5" style="color: white; font-style: 10px;">Copyright © 2021 주쑤 juhee-yeonsu-jinsu. All rights reserved. </p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
